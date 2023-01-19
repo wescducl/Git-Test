@@ -21,8 +21,14 @@ namespace First_Project
         }
         static void Main(string[] args)
         {
-            int randomNumber = new Random().Next(0, 100);
-            Console.WriteLine("I am thinking of a number between 0 - 100");
+            int x, y;
+            Console.WriteLine("Please enter a bottom limit of number to choose from: ");
+                x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter a upper limit of number to choose from: ");
+            y = Convert.ToInt32(Console.ReadLine());
+
+            int randomNumber = new Random().Next(x, y);
+            Console.WriteLine("I am thinking of a number between "+x+" - "+y);
             int numberOfTries = 1;
             int guess = GetGuess();
             while (guess != randomNumber)
