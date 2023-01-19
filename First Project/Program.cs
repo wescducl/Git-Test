@@ -23,14 +23,14 @@ namespace First_Project
         {
             int randomNumber = new Random().Next(0, 100);
             Console.WriteLine("I am thinking of a number between 0 - 100");
-            int numberOfTries = 0;
-            while (GetGuess() != randomNumber)
+            int numberOfTries = 1;
+            int guess = GetGuess();
+            while (guess != randomNumber)
             {
-                int guess = GetGuess();
                 numberOfTries++;
                 if (guess == randomNumber)
                 {
-                    Console.WriteLine("Your guess was correct! It took you " ,numberOfTries, " times to guess the number");
+                    Console.WriteLine("Your guess was correct! It took you " +numberOfTries+" times to guess the number");
                     break;
                 }
                 if (guess > randomNumber)
@@ -41,8 +41,9 @@ namespace First_Project
                 {
                     Console.WriteLine("Your guess was too low!!");
                 }
+                guess = GetGuess();
             }
-          
+            Console.WriteLine("Your guess was correct! It took you "+numberOfTries+ " times to guess the number");
         }
     }
 }
